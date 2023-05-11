@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/error_linear_layout"
@@ -28,6 +29,8 @@
         android:layout_margin="@dimen/layout_margin2"
         android:layout_marginStart="@dimen/layout_marginStart2"
         android:layout_marginTop="@dimen/layout_marginTop"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_textview_recycler_item"
         tools:ignore="MissingConstraints"
@@ -45,10 +48,11 @@
         android:layout_width="@dimen/layout_width2"
         android:layout_height="@dimen/layout_height"
         android:layout_margin="@dimen/layout_margin2"
-        android:layout_marginEnd="@dimen/layout_marginEnd"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/description_textview_recycler_item"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/description_textview_recycler_item"
-        app:layout_constraintTop_toTopOf="@+id/description_textview_recycler_item"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/description_textview_recycler_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
