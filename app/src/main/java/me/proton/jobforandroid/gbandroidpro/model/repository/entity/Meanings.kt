@@ -1,6 +1,8 @@
 package me.proton.jobforandroid.gbandroidpro.model.repository.entity
 
+import com.google.gson.annotations.Expose
+
 class Meanings(
-    val translation: Translation?,
-    val imageUrl: String?
+    @Expose val translation: Translation?,
+    @Expose val imageUrl: String?
 )

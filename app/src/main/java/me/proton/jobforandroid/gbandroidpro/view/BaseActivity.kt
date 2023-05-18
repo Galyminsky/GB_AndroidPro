@@ -13,6 +13,7 @@ import me.proton.jobforandroid.gbandroidpro.viewmodel.Interactor
 abstract class BaseActivity<T : AppState, I : Interactor<T>> : AppCompatActivity() {
 
     abstract val model: BaseViewModel<T>
+
     protected var isNetworkAvailable: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {

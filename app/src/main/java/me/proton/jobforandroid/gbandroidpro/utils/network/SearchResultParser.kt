@@ -20,6 +20,7 @@ fun parseSearchResults(state: AppState): AppState {
 
         }
     }
+
     return AppState.Success(newSearchResults)
 }
 

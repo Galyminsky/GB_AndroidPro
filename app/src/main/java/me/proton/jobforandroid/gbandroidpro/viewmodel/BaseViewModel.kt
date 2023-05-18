@@ -6,7 +6,7 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
+import kotlinx.coroutines.cancelChildren
 import me.proton.jobforandroid.gbandroidpro.model.AppState
 
 abstract class BaseViewModel<T : AppState>(
@@ -26,7 +26,7 @@ abstract class BaseViewModel<T : AppState>(
     }
 
     protected fun cancelJob() {
-        viewModelCoroutineScope.cancel()
+        viewModelCoroutineScope.coroutineContext.cancelChildren()
     }
 
     abstract fun getData(word: String, isOnline: Boolean)
