@@ -1,16 +1,9 @@
 package me.proton.jobforandroid.gbandroidpro.application
 
 import android.app.Application
-import dagger.BindsInstance
-import dagger.Component
 import me.proton.jobforandroid.gbandroidpro.di.AppComponent
+import me.proton.jobforandroid.gbandroidpro.di.DaggerAppComponent
 
-
-
-@Component.Factory
-interface Factory {
-    fun create(@BindsInstance app: TranslatorApp): AppComponent
-}
 
 class TranslatorApp : Application() {
 
@@ -21,8 +14,9 @@ class TranslatorApp : Application() {
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerAppComponent
-            .factory()
-            .create(this)
+            .builder()
+            .appContent(this)
+            .build()
     }
 }
 

@@ -8,7 +8,6 @@ import me.proton.jobforandroid.gbandroidpro.view.main.MainInteractor
 import javax.inject.Named
 
 @Module
-
 class InteractorModule {
 
     @Provides
