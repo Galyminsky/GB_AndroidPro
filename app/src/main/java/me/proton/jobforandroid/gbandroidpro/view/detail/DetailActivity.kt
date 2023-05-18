@@ -12,6 +12,7 @@ import me.proton.jobforandroid.gbandroidpro.R
 import me.proton.jobforandroid.gbandroidpro.databinding.ActivityDetailBinding
 import me.proton.jobforandroid.gbandroidpro.utils.isOnline
 import me.proton.jobforandroid.gbandroidpro.utils.ui.AlertDialogFragment
+import java.lang.Exception
 
 class DetailActivity : AppCompatActivity() {
 
@@ -57,17 +58,18 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun usePicassoToLoadPhoto(imageView: ImageView, imageLink: String) {
-        Picasso.with(applicationContext).load("https:$imageLink")
+        Picasso.get().load("https:$imageLink")
             .placeholder(R.drawable.ic_no_photo_vector).fit().centerCrop()
             .into(imageView, object : Callback {
                 override fun onSuccess() {
                     stopRefreshAnimationIfNeeded()
                 }
 
-                override fun onError() {
+                override fun onError(e: Exception?) {
                     stopRefreshAnimationIfNeeded()
                     imageView.setImageResource(R.drawable.ic_load_error_vector)
                 }
+
             })
     }
 

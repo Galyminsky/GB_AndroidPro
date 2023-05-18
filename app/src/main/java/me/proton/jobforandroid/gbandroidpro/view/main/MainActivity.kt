@@ -14,6 +14,7 @@ import me.proton.jobforandroid.gbandroidpro.model.AppState
 import me.proton.jobforandroid.gbandroidpro.model.repository.entity.DataModel
 import me.proton.jobforandroid.gbandroidpro.utils.network.convertMeaningsToString
 import me.proton.jobforandroid.gbandroidpro.view.BaseActivity
+import me.proton.jobforandroid.gbandroidpro.view.detail.DetailActivity
 import me.proton.jobforandroid.gbandroidpro.view.history.HistoryActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
