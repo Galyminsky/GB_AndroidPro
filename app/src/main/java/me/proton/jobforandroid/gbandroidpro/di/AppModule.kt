@@ -1,8 +1,10 @@
 package me.proton.jobforandroid.gbandroidpro.di
 
+import androidx.room.Room
 import me.proton.jobforandroid.gbandroidpro.model.datasource.BaseInterceptor
 import me.proton.jobforandroid.gbandroidpro.model.repository.ApiService
 import me.proton.jobforandroid.gbandroidpro.model.repository.RetrofitImplementation
+import me.proton.jobforandroid.gbandroidpro.model.room.HistoryDataBase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -13,6 +15,8 @@ val appModule = module {
     single { provideRetrofit() }
     single { provideService() }
     single { provideOkHttpClient() }
+    single { Room.databaseBuilder(get(), HistoryDataBase::class.java, "HistoryDB").build() }
+    single { get<HistoryDataBase>().historyDao() }
 }
 
 private fun provideService(): ApiService {

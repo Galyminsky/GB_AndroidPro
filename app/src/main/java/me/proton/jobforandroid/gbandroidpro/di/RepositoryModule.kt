@@ -1,8 +1,10 @@
 package me.proton.jobforandroid.gbandroidpro.di
 
+import me.proton.jobforandroid.gbandroidpro.model.datasource.RepositoryLocal
 import me.proton.jobforandroid.gbandroidpro.model.datasource.RoomDataBaseImplementation
 import me.proton.jobforandroid.gbandroidpro.model.repository.Repository
 import me.proton.jobforandroid.gbandroidpro.model.repository.RepositoryImplementation
+import me.proton.jobforandroid.gbandroidpro.model.repository.RepositoryImplementationLocal
 import me.proton.jobforandroid.gbandroidpro.model.repository.RetrofitImplementation
 import me.proton.jobforandroid.gbandroidpro.model.repository.entity.DataModel
 import org.koin.core.qualifier.named
@@ -14,9 +16,7 @@ val repositoryModule = module {
             RetrofitImplementation(get())
         )
     }
-    single<Repository<List<DataModel>>>(named("Local")) {
-        RepositoryImplementation(
-            RoomDataBaseImplementation()
-        )
+    single<RepositoryLocal<List<DataModel>>>(named("Local")) {
+        RepositoryImplementationLocal(RoomDataBaseImplementation(get()))
     }
 }

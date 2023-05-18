@@ -1,10 +1,13 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-
-    <dimen name="time_text_size">80sp</dimen>
-    <dimen name="time_tlayout_marginTop">192dp</dimen>
-    <dimen name="button_text_size">20sp</dimen>
-    <dimen name="start_button_margin_start">30dp</dimen>
-    <dimen name="start_button_margin_end">30dp</dimen>
-    <dimen name="time_margin_top">30dp</dimen>
+    <dimen name="layout_margin">5dp</dimen>
+    <dimen name="layout_marginTop">88dp</dimen>
+    <dimen name="layout_marginTop2">8dp</dimen>
+    <dimen name="layout_width">215dp</dimen>
+    <dimen name="layout_height">154dp</dimen>
+    <dimen name="layout_margin2">10dp</dimen>
+    <dimen name="layout_marginStart">12dp</dimen>
+    <dimen name="layout_width2">178dp</dimen>
+    <dimen name="layout_height2">156dp</dimen>
+    <dimen name="layout_marginEnd">24dp</dimen>
 </resources>

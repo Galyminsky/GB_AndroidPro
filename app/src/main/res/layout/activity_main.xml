@@ -9,7 +9,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout"
         style="@style/wikipedia_textInputLayout"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/layout_margin"
         android:hint="@string/button_search"
         android:visibility="visible"
         app:counterEnabled="true"
@@ -34,7 +34,7 @@
         android:id="@+id/main_activity_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="@dimen/layout_marginTop"
         app:layout_constraintTop_toBottomOf="@+id/input_layout"
         tools:layout_editor_absoluteX="0dp" />
 

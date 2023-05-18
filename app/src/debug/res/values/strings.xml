@@ -24,9 +24,5 @@
     <string name="dialog_tittle_sorry">Sorry</string>
 
     <string name="error_stub">Error</string>
-
-    <string name="button_start_title">Start</string>
-    <string name="button_pause_title">Pause</string>
-    <string name="button_stop_title">Stop</string>
-    <string name="time_init_text">00:00:000</string>
+    <string name="menu_title_history">History</string>
 </resources>

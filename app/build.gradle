@@ -63,4 +63,13 @@ dependencies {
 
     // Fragment ktx
     implementation "androidx.fragment:fragment-ktx:1.5.7"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:2.71828"
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.6.0-alpha01'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    kapt 'androidx.room:room-compiler:2.6.0-alpha01'
+    implementation 'androidx.room:room-ktx:2.6.0-alpha01'
 }

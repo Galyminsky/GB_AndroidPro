@@ -17,7 +17,13 @@
         android:theme="@style/Theme.GBAndroidPro"
         tools:targetApi="31">
         <activity
-            android:name=".stopwatch.view.StopwatchActivity"
+            android:name=".view.history.HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.detail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
