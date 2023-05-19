@@ -51,7 +51,6 @@ dependencies {
     //Koin
     implementation 'io.insert-koin:koin-core:3.2.0'
     implementation 'io.insert-koin:koin-android:3.2.0'
-    implementation 'io.insert-koin:koin-androidx-viewmodel:3.2.2'
     implementation 'io.insert-koin:koin-ktor:3.2.0'
 
     //retrofit
@@ -67,5 +66,5 @@ dependencies {
     implementation 'io.coil-kt:coil:2.2.2'
 
     implementation 'androidx.fragment:fragment-ktx:1.5.7'
-    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.4'
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.7'
 }

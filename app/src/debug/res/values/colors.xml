@@ -20,4 +20,9 @@
     <color name="color_black">#313131</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_gray">#66000000</color>
+
+    <color name="yellow_main">#FFC107</color>
+    <color name="yellow_dark">#FF8F00</color>
+    <color name="yellow_light">#FFD54F</color>
+    <color name="yellow_back">#FFF8E1</color>
 </resources>
