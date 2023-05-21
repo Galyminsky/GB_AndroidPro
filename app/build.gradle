@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+
 }
 
 android {
@@ -15,8 +17,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
 
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -33,6 +35,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+
 }
 
 dependencies {
@@ -45,5 +48,23 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    //Koin
+    implementation 'io.insert-koin:koin-core:3.2.0'
+    implementation 'io.insert-koin:koin-android:3.2.0'
+    implementation 'io.insert-koin:koin-ktor:3.2.0'
 
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    // Coil
+    implementation 'io.coil-kt:coil:2.2.2'
+
+    implementation 'androidx.fragment:fragment-ktx:1.5.7'
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.4.7'
 }
