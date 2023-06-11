@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Config.compile_sdk
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    defaultConfig {
+        minSdkVersion Config.min_sdk
+    }
+    namespace 'com.example.android.dictionary.utils'
+}
+
+dependencies {
+
+    //Download images
+    //Picasso
+    implementation Picasso.picasso
+    //Glide
+    implementation Glide.glide
+    kapt Glide.glide_compiler
+
+    //Koil image download
+    implementation("io.coil-kt:coil:0.9.2")
+
+    implementation Design.appcompat
+
+    testImplementation TestImpl.junit
+    androidTestImplementation TestImpl.runner
+    androidTestImplementation TestImpl.espresso
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+}
+repositories {
+    mavenCentral()
+}

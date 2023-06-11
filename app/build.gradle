@@ -1,49 +1,89 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
-android {
-    namespace 'me.proton.jobforandroid.gbandroidpro'
-    compileSdk 33
+compileSdkVersion Config.compile_sdk
+defaultConfig {
+    applicationId Config.application_id
+    minSdkVersion Config.min_sdk
+    targetSdkVersion Config.target_sdk
+    versionCode Releases.version_code
+    versionName Releases.version_name
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+}
 
-    defaultConfig {
-        applicationId "me.proton.jobforandroid.gbandroidpro"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    buildFeatures {
-        viewBinding true
+buildTypes {
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
 }
+compileOptions {
+    sourceCompatibility Config.java_version
+    targetCompatibility Config.java_version
+}
+kotlinOptions {
+    jvmTarget = '1.8'
+}
+
 
 dependencies {
+    // api project(":app")
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation project(Modules.model)
+    implementation project(Modules.utils)
+
+    //AndroidX
+    implementation Tools.multidex
+    implementation Design.appcompat
+
+    //implementation 'com.android.support:multidex:1.0.3'
+    implementation Tools.swiperefreshlayout
+
+    //Design
+    //You should not use the com.android.support and com.google.android.material dependencies in your app at the same time
+    implementation Design.material
+
+    //Kotlin
+    implementation Kotlin.core
+    implementation Kotlin.stdlib
+
+    //AppCompat
+    implementation Design.appcompat
+
+    //Download images
+    //Picasso
+    implementation Picasso.picasso
+    //Glide
+    implementation Glide.glide
+    implementation 'com.google.android.play:core-ktx:1.8.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    kapt Glide.glide_compiler
+    //Koil image download
+    implementation("io.coil-kt:coil:2.2.2")
+
+    //Koin for Android
+    implementation Koin.koin_android
+    implementation Koin.koin_view_model
+
+    //Room
+    implementation Room.runtime
+    kapt Room.compiler
+    implementation Room.room_ktx
+
+    //Test
+    testImplementation TestImpl.junit
+    androidTestImplementation TestImpl.runner
+    androidTestImplementation TestImpl.espresso
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
 
-
+}
+repositories {
+    mavenCentral()
 }
